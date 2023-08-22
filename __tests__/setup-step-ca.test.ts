@@ -49,7 +49,7 @@ test("run should succeed with latest version", async () => {
     "--strip-components=1",
   ]);
   expect(tc.cacheDir).toHaveBeenCalledWith("step-ca", "step-ca", "9999.99.99");
-  expect(core.addPath).toHaveBeenCalledWith("step-ca/bin");
+  expect(core.addPath).toHaveBeenCalledWith("step-ca");
   expect(exec.exec).toHaveBeenCalledWith("step-ca", ["version"]);
 });
 
@@ -81,7 +81,7 @@ test("run should succeed on linux x64", async () => {
     "--strip-components=1",
   ]);
   expect(tc.cacheDir).toHaveBeenCalledWith("step-ca", "step-ca", version);
-  expect(core.addPath).toHaveBeenCalledWith("step-ca/bin");
+  expect(core.addPath).toHaveBeenCalledWith("step-ca");
   expect(exec.exec).toHaveBeenCalledWith("step-ca", ["version"]);
 });
 
@@ -113,7 +113,7 @@ test("run should succeed on linux arm64", async () => {
     "--strip-components=1",
   ]);
   expect(tc.cacheDir).toHaveBeenCalledWith("step-ca", "step-ca", version);
-  expect(core.addPath).toHaveBeenCalledWith("step-ca/bin");
+  expect(core.addPath).toHaveBeenCalledWith("step-ca");
   expect(exec.exec).toHaveBeenCalledWith("step-ca", ["version"]);
 });
 
@@ -145,7 +145,7 @@ test("run should succeed on darwin x64", async () => {
     "--strip-components=1",
   ]);
   expect(tc.cacheDir).toHaveBeenCalledWith("step-ca", "step-ca", version);
-  expect(core.addPath).toHaveBeenCalledWith("step-ca/bin");
+  expect(core.addPath).toHaveBeenCalledWith("step-ca");
   expect(exec.exec).toHaveBeenCalledWith("step-ca", ["version"]);
 });
 
@@ -177,7 +177,7 @@ test("run should succeed on windows x64", async () => {
     "--strip-components=1",
   ]);
   expect(tc.cacheDir).toHaveBeenCalledWith("step-ca", "step-ca", version);
-  expect(core.addPath).toHaveBeenCalledWith("step-ca/bin");
+  expect(core.addPath).toHaveBeenCalledWith("step-ca");
   expect(exec.exec).toHaveBeenCalledWith("step-ca", ["version"]);
 });
 

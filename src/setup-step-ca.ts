@@ -65,10 +65,8 @@ export async function installStepCA(version: string): Promise<string> {
     "step-ca",
     artifactVersion
   );
-  core.addPath(`${stepCACachedPath}/bin`);
-  core.info(
-    `Added ${stepCACachedPath} to tool-cache and ${stepCACachedPath}/bin to $PATH`
-  );
+  core.addPath(`${stepCACachedPath}`);
+  core.info(`Added ${stepCACachedPath} to tool-cache and $PATH`);
 
   const allStepCAVersions = tc.findAllVersions("step-ca");
   core.info(`Versions of step available: ${allStepCAVersions}`);

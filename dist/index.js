@@ -161,8 +161,8 @@ function installStepCA(version) {
         ]);
         core.info(`Extracted step-ca_${artifactPlatform}_${artifactVersion}_${artifactArch}.tar.gz to ${stepCAExtracted}`);
         const stepCACachedPath = yield tc.cacheDir(stepCAExtracted, "step-ca", artifactVersion);
-        core.addPath(`${stepCACachedPath}/bin`);
-        core.info(`Added ${stepCACachedPath} to tool-cache and ${stepCACachedPath}/bin to $PATH`);
+        core.addPath(`${stepCACachedPath}`);
+        core.info(`Added ${stepCACachedPath} to tool-cache and $PATH`);
         const allStepCAVersions = tc.findAllVersions("step-ca");
         core.info(`Versions of step available: ${allStepCAVersions}`);
         yield exec.exec("step-ca", ["version"]);
