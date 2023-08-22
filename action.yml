@@ -1,0 +1,11 @@
+name: 'Setup Smallstep step-ca server'
+description: 'Downloads and installs a specific or the latest version of the Smallstep step-ca server.'
+author: 'Smallstep Labs, Inc.'
+inputs:
+  version:
+    required: true
+    description: 'The version of the step-ca server to install.'
+    default: 'latest'
+runs:
+  using: 'node18'
+  main: 'dist/index.js'
