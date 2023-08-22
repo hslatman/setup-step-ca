@@ -1,0 +1,35 @@
+name: 'try-setup-step-ca'
+on: 
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-linux: # make sure the action works on a clean linux machine without building
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          version: 'latest'
+      - name: Get Version
+        run: step-ca version
+  test-macos: # make sure the action works on a clean macos machine without building
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          version: 'latest'
+      - name: Get Version
+        run: step-ca version
+  test-windows: # make sure the action works on a clean windows machine without building
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          version: 'latest'
+      - name: Get Version
+        run: step-ca version
